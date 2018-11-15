@@ -12,11 +12,12 @@ import { MapService } from 'src/app/maps/map.service';
   styleUrls: ['./profile-local.component.css']
 })
 export class ProfileLocalComponent implements OnInit {
+  
 
   public dtOptions: DataTables.Settings = {};
   dtTriggerLevels: Subject<any> = new Subject();
   dtTriggerPersons: Subject<any> = new Subject();
-  title = 'Level 2';
+  // title = 'Level 2';
 
   optionsSurface = {
     view: [],
@@ -70,8 +71,8 @@ export class ProfileLocalComponent implements OnInit {
           (levelApi: any) => {
             this.level = levelApi.data;
 
-            console.log(this.level);
-            this.title = this.level.properties.name + ' Levels 2';
+            // console.log(this.level);
+            // this.title = this.level.properties.name + ' Levels 2';
             // this.getGraphSurface(this.level, this.country);
             // this.getGraphPopulation(this.level, this.country);
           },

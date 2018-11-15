@@ -33,9 +33,16 @@
               <i class="fa fa-info-circle"></i>Population
             </div>
             <div class="panel-body d-flex justify-content-center">
-              <ngx-charts-bar-horizontal [scheme]="colorSchemePopulation" [results]="singlePOP" [xAxis]="showXAxis"
-                [yAxis]="showYAxis" [legend]="showLegendBarChart" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel"
-                [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel">
+              <ngx-charts-bar-horizontal [scheme]="colorSchemePopulation"
+                [results]="singlePOP"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis" 
+                [gradient]="gradient"
+                [legend]="showLegendBarChart" 
+                [showXAxisLabel]="showXAxisLabel" 
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel" 
+                [yAxisLabel]="yAxisLabel">
               </ngx-charts-bar-horizontal>
             </div>
           </div>
@@ -184,9 +191,62 @@
         </div>
       </div>
 
-      <!-- body of Relationship with citizen  -->
+      <!--Partenaires au développement   -->
       <div role="tabpanel" #tab4 id="tab4" class="tab-pane" [ngClass]="tab4.id == tabHover ? 'active show' : ''">
         <div class="panel-body">
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="panel panel-info">
+                    <div class="panel-heading">
+                      <i class="fa fa-info-circle"></i>Par type d’institutions 
+                    </div>
+                    <div class="panel-body d-flex justify-content-center " style="height: 500px">
+                      <ngx-charts-bar-vertical [scheme]="colorSchemePopulation"
+                        [results]="singlePOP"
+                        [xAxis]="showXAxis"
+                        [yAxis]="showYAxis" 
+                        [gradient]="gradient"
+                        [legend]="showLegendBarChart" 
+                        [showXAxisLabel]="showXAxisLabel" 
+                        [showYAxisLabel]="showYAxisLabel"
+                        [xAxisLabel]="xAxisLabelinst" 
+                        [yAxisLabel]="yAxisLabelinst">
+                      </ngx-charts-bar-vertical>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-info">
+                      <div class="panel-heading">
+                        <i class="fa fa-info-circle"></i>Par domaine d’interventions 
+                      </div>
+                      <div class="panel-body d-flex justify-content-center"  style="height: 500px">
+                        <ngx-charts-bar-horizontal [scheme]="colorSchemePopulation"
+                          [results]="singlePOP"
+                          [xAxis]="showXAxis"
+                          [yAxis]="showYAxis" 
+                          [gradient]="gradient"
+                          [legend]="showLegendBarChart" 
+                          [showXAxisLabel]="showXAxisLabel" 
+                          [showYAxisLabel]="showYAxisLabel"
+                          [xAxisLabel]="xAxisLabeldomaine" 
+                          [yAxisLabel]="yAxisLabeldomaine">
+                        </ngx-charts-bar-horizontal>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                      <div class="panel panel-info">
+                        <div class="panel-heading">
+                          <i class="fa fa-info-circle"></i>Par siège (% Afrique et % Hors Afrique) 
+                        </div>
+                        <div class="panel-body d-flex justify-content-center " style="height: 300px">
+                            <ngx-charts-pie-grid  [scheme]="colorSchemeCL" [results]="singleSiege">
+                              </ngx-charts-pie-grid>
+                        </div>
+                      </div>
+                    </div>
+          </div>
 
         </div>
       </div>
@@ -195,18 +255,6 @@
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   </div>

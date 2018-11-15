@@ -25,9 +25,9 @@ class LevelCollection extends JsonResource
                 'name' => $this->name,
                 'country_id' => $this->country_id,
                 'level_id' => $this->level_id,
-                'population' => 3200000,
+                'population' => $this->population,
                 // 'population_year' => 2005,
-                'census_date_population' => $this->census_date_population,
+                'date_population' => $this->census_date_population,
                 'n_localGovernment_included' => Level::where('level_id', $this->id)->count(),
 
                 'partie_genre_male' => Level::find($this->id)->Persons->where('sex', 'male')->count(),

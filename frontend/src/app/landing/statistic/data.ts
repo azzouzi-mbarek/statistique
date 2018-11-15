@@ -57,3 +57,14 @@ export var singleGenaral = [
       "value": 7200000
     }
   ];
+  export var singleSiege  = [
+    {
+      "name": " Hors Afrique",
+      "value": 7
+    },
+    {
+      "name": "En Afrique",
+      "value": 10
+    },
+    
+  ];

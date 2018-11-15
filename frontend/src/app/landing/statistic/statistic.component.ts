@@ -1,6 +1,6 @@
 import { CountryService } from './../../services/country.service';
 import { Component, OnInit, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
-import { singleCL, singleEL } from './data';
+import { singleCL, singleEL,singleSiege } from './data';
 import { RegionService } from 'src/app/services/region.service';
 import { StatistcMapComponent } from 'src/app/maps/statistc-map/statistc-map.component';
 
@@ -47,6 +47,12 @@ export class StatisticComponent implements OnInit {
   doughnut = false;
 
   view: any[] = [400, 200];
+  //  domaine d’interventions
+  xAxisLabeldomaine = 'Nombre';
+  yAxisLabeldomaine = ' domaine d’interventions';
+  // Par type d’institutions 
+  xAxisLabelinst = ' type d’institutions ';
+  yAxisLabelinst = 'Nombre';
   // bar chart Niveau académique 
   xAxisLabelNiveau = ' Nombre';
   yAxisLabelNiveau = 'Niveau académique';
@@ -55,7 +61,7 @@ export class StatisticComponent implements OnInit {
   // bar chart Population
   showXAxis = true;
   showYAxis = true;
-  gradient = false;
+  gradient = true;
   showLegendBarChart = true;
   showXAxisLabel = true;
   xAxisLabel = 'Population';
@@ -67,7 +73,7 @@ export class StatisticComponent implements OnInit {
   };
 
   constructor(private _countriesService: CountryService, private _regionsService: RegionService) {
-    Object.assign(this, { singleCL, singleEL });
+    Object.assign(this, { singleCL, singleEL,singleSiege });
   }
 
 
